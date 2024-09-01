@@ -27,6 +27,7 @@ const Home = () => {
         })
 
         console.log(response)
+          console.log(localStorage.getItem('token'))
 
         dispatch(setUser(response.data.data))
 
