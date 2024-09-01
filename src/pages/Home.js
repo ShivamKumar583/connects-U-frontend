@@ -17,17 +17,18 @@ const Home = () => {
   const fetchUserDetails = async()=>{
     try {
         const URL = `${process.env.REACT_APP_BACKEND_URL}/api/user-details`
+      const token = localStorage.getItem('token')
         const response = await axios({
           method:'get',
           data:{
-            token:localStorage.getItem('token')
+            token:token
           },
           url : URL,
           withCredentials : true
         })
 
         console.log(response)
-          console.log(localStorage.getItem('token'))
+          console.log(token)
 
         dispatch(setUser(response.data.data))
 
