@@ -20,7 +20,7 @@ const Home = () => {
         const response = await axios({
           method:'get',
           data:{
-            token:localStorage.setItem('token')
+            token:localStorage.getItem('token')
           },
           url : URL,
           withCredentials : true
